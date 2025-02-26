@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediSphere</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+<body>
+    <header class="main-header">
+        <a href="#" class="help-center">Help Center</a>
+        <div class="branding">
+            <h1 class="logo">MediSphere</h1>
+            <span class="domain">medisphere.live</span>
+        </div>
+        <nav class="side-nav" id="sideNav">
+            <div class="nav-header">
+                <h1>MediSphere</h1>
+            </div>
+            <ul class="nav-list">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Blood</a></li>
+                <li><a href="#">Hospitals</a></li>
+                <li><a href="#">Appointments</a></li>
+                <li><a href="{% url 'login' %}">Login/SignUp</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- JavaScript to Prevent Page Refresh on Click -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", function (event) {
+                    if (this.getAttribute("href") === "#") {
+                        event.preventDefault();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
