@@ -24,5 +24,7 @@ urlpatterns = [
     path("auth/",include("accounts.urls")),
     path('accounts/',include('allauth.urls')),
     path('payment/',include('payment.urls')),
+    path('about_us/',views.about_us,name="about_us"),
+    path('contact/',views.contact_us,name="contact"),
    
 ]

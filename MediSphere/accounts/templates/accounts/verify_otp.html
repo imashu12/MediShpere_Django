@@ -1,5 +1,7 @@
 {% include "header.html" %}
+
 <title>Verify OTP</title>
+
 <body>
     <h2>Verify OTP</h2>
     
@@ -11,14 +13,14 @@
         </ul>
     {% endif %}
     
-    <form method="post">
+    <form method="POST">
         {% csrf_token %}
         
-        <label for="otp">Enter OTP:</label>
+        <label for="otp_code">Enter OTP:</label>
         <input type="text" name="otp_code" required><br><br>
 
         <button type="submit">Verify OTP</button>
     </form>
 </body>
-</html>
+
 {% include "footer.html" %}

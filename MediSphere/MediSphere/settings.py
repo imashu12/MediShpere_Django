@@ -30,7 +30,8 @@ ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
 
 # Application definition
-SITE_ID = 3 
+SITE_ID = 5
+
 
 
 INSTALLED_APPS = [
@@ -50,6 +51,9 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+   
+    
+
 ]
 
 MIDDLEWARE = [
@@ -142,17 +146,24 @@ STATICFILES_DIRS=[BASE_DIR,'static']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'accounts.customuser'
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
+
+
+RECAPTCHA_PUBLIC_KEY=os.getenv('RECAPTCHA_PUBLIC_KEY')
+RECAPTCHA_PRIVATE_KEY=os.getenv('RECAPTCHA_PRIVATE_KEY')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST='smtp.gmail.com'
+EMAIL_HOST_USER=os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD=os.getenv("EMAIL_HOST_PASSWORD")
 EMAIL_PORT=587
-EMAIL_HOST_USER='medisphere01@gmail.com'
-EMAIL_HOST_PASSWORD='chpldziqghjjrlge'
+
 EMAIL_USE_TLS=True
 
-RECAPTCHA_PUBLIC_KEY='6LeUatAqAAAAADbj4u7dlDhKFioSzBpDTYnS_t7E'
-RECAPTCHA_PRIVATE_KEY='6LeUatAqAAAAAHQQ2U__DMogAXTDMjUUyz9MW56Y'
+
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
@@ -164,7 +175,9 @@ SOCIALACCOUNT_PROVIDERS = {
             'access_type': 'online',
         }
     }
-} 
+}
+ 
+
 AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
     'allauth.account.auth_backends.AuthenticationBackend',

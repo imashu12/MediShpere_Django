@@ -11,7 +11,7 @@ class customuser(AbstractUser):
 
 class OTP(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    otp_code = models.CharField(max_length=6)
+    otp_code = models.CharField(max_length=64)
     created_at = models.DateTimeField(auto_now_add=True)
 
 def is_expired(self):

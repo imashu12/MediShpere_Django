@@ -4,42 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MediSphere</title>
-    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <title>MediSphere - Comprehensive Healthcare Solutions</title>
+    <link rel="stylesheet" href="/static/css/home.css">
+    <script src="/static/js/home.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
-    <header class="main-header">
-        <a href="#" class="help-center">Help Center</a>
-        <div class="branding">
-            <h1 class="logo">MediSphere</h1>
-            <span class="domain">medisphere.live</span>
-        </div>
-        <nav class="side-nav" id="sideNav">
-            <div class="nav-header">
-                <h1>MediSphere</h1>
-            </div>
-            <ul class="nav-list">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Blood</a></li>
-                <li><a href="#">Hospitals</a></li>
-                <li><a href="#">Appointments</a></li>
-                <li><a href="{% url 'login' %}">Login/SignUp</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Side Navigation -->
+    <nav class="sidenav" id="sidenav">
+        <div class="logo">
+            <img src="/static/images/logo.jpg" alt="MediSphere Logo" class="logo-img">
 
-    <!-- JavaScript to Prevent Page Refresh on Click -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.querySelectorAll("a").forEach(link => {
-                link.addEventListener("click", function (event) {
-                    if (this.getAttribute("href") === "#") {
-                        event.preventDefault();
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+            <h1>MediSphere</h1>
+        </div>
+                
+        <div class="nav-items">
+            <a href="{% url "home" %}" class="active"><i class="fas fa-home"></i> Home</a>
+            <a href="#calendar"><i class="fas fa-calendar-alt"></i> Schedule</a>
+            <a href="#records"><i class="fas fa-file-medical"></i> Records</a>
+            <a href="#blood"><i class="fas fa-tint"></i> Blood</a>
+            <a href="#inventory"><i class="fas fa-boxes"></i> Inventory</a>
+            <a href="{% url "contact" %}"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="{% url "about_us" %}"><i class="fas fa-info-circle"></i> About</a>
+        </div>
+    </nav>

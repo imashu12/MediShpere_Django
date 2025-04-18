@@ -1,0 +1,143 @@
+[
+    {
+      "city": "Lucknow",
+      "hospitals": [
+        {
+          "name": "Sanjay Gandhi Postgraduate Institute of Medical Sciences (SGPGI)",
+          "address": "Rae Bareli Road, Lucknow",
+          "contact": "0522 266 8700",
+          "website": "https://sgpgims.org.in/"
+        },
+        {
+          "name": "King George's Medical University (KGMU)",
+          "address": "Shah Mina Road, Chowk, Lucknow",
+          "contact": "0522 225 8880",
+          "website": "http://www.kgmu.org/"
+        },
+        {
+          "name": "Dr. Ram Manohar Lohia Institute of Medical Sciences (RMLIMS)",
+          "address": "Vibhuti Khand, Gomti Nagar, Lucknow",
+          "contact": "0522 669 2000",
+          "website": "http://drrmlims.ac.in/"
+        },
+        {
+          "name": "Medanta Hospital",
+          "address": "Sector B, Pocket-1, Sushant Golf City, Amar Shaheed Path, Lucknow",
+          "contact": "0522 450 5050",
+          "website": "https://www.medanta.org/hospitals-lucknow/"
+        },
+        {
+          "name": "ApolloMedics Super Speciality Hospital",
+          "address": "Kanpur Road, Bargawan, LDA Colony, Lucknow",
+          "contact": "0522 678 8888",
+          "website": "https://apollomedics.com/"
+        }
+      ]
+    },
+    {
+      "city": "Shimla",
+      "hospitals": [
+        {
+          "name": "Indira Gandhi Medical College and Hospital (IGMC)",
+          "address": "Ridge Sanjauli Road, Shimla",
+          "contact": "0177 265 8831",
+          "website": "https://www.igmcshimla.edu.in/"
+        },
+        {
+          "name": "Deen Dayal Upadhyay Hospital",
+          "address": "Shimla, Himachal Pradesh",
+          "contact": "0177 280 6333",
+          "website": "http://www.hphealth.nic.in/"
+        },
+        {
+          "name": "Fortis Hospital Shimla",
+          "address": "Shimla Bypass, Tutikandi, Shimla",
+          "contact": "0177 645 5555",
+          "website": "https://www.fortishealthcare.com/"
+        },
+        {
+          "name": "Kamla Nehru Hospital",
+          "address": "Near IGMC, Shimla",
+          "contact": "0177 265 5291",
+          "website": "https://www.himachal.nic.in/"
+        },
+        {
+          "name": "Civil Hospital Rohru",
+          "address": "Rohru, Shimla District",
+          "contact": "0178 124 5146",
+          "website": "http://www.hphealth.nic.in/"
+        }
+      ]
+    },
+    {
+      "city": "Delhi",
+      "hospitals": [
+        {
+          "name": "AIIMS Delhi",
+          "address": "Ansari Nagar, New Delhi",
+          "contact": "011 2658 8500",
+          "website": "https://www.aiims.edu/"
+        },
+        {
+          "name": "Fortis Escorts Heart Institute",
+          "address": "Okhla Road, New Delhi",
+          "contact": "011 4713 5000",
+          "website": "https://www.fortisescorts.in/"
+        },
+        {
+          "name": "Sir Ganga Ram Hospital",
+          "address": "Rajinder Nagar, New Delhi",
+          "contact": "011 2575 0000",
+          "website": "https://www.sgrh.com/"
+        },
+        {
+          "name": "BLK-Max Super Speciality Hospital",
+          "address": "Pusa Road, New Delhi",
+          "contact": "011 3040 3040",
+          "website": "https://www.blkhospital.com/"
+        },
+        {
+          "name": "Apollo Hospital Delhi",
+          "address": "Mathura Road, Sarita Vihar, Delhi",
+          "contact": "011 7179 1090",
+          "website": "https://delhi.apollohospitals.com/"
+        }
+      ]
+    },
+    {
+      "city": "Mumbai",
+      "hospitals": [
+        {
+          "name": "Kokilaben Dhirubhai Ambani Hospital",
+          "address": "Andheri West, Mumbai",
+          "contact": "022 4269 6969",
+          "website": "https://www.kokilabenhospital.com/"
+        },
+        {
+          "name": "Lilavati Hospital",
+          "address": "Bandra Reclamation, Mumbai",
+          "contact": "022 2675 1000",
+          "website": "https://www.lilavatihospital.com/"
+        },
+        {
+          "name": "Hinduja Hospital",
+          "address": "Veer Savarkar Marg, Mahim, Mumbai",
+          "contact": "022 2445 1515",
+          "website": "https://www.hindujahospital.com/"
+        },
+        {
+          "name": "Bombay Hospital",
+          "address": "Marine Lines, Mumbai",
+          "contact": "022 2206 7676",
+          "website": "https://www.bombayhospital.com/"
+        },
+        {
+          "name": "Nanavati Max Super Speciality Hospital",
+          "address": "Vile Parle West, Mumbai",
+          "contact": "022 2626 7500",
+          "website": "https://www.nanavatihospital.org/"
+        }
+      ]
+    }
+  ]
+  

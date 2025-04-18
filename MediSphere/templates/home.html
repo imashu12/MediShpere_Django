@@ -1,11 +1,72 @@
 {% include "header.html" %}
-{% load static %}
-
-    <div class="main-content" id="mainContent">
-        <h2>Welcome to MediSphere</h2>
-        <p>Start building your healthcare platform...</p>
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="mobile-logo">
+            <i class="fas fa-hospital-alt"></i>
+        </div>
     </div>
 
-    <script src="{% static 'home.js' %}"></script>
-</body>
-</html>
+    <!-- Main Content -->
+    <main class="main" id="main">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="header-row">
+                <div class="logo">
+                    <i class="fas fa-hospital-alt"></i>
+                    <h1>MediSphere</h1>
+                </div>
+                <div class="top-buttons">
+                    <button class="help-btn"><i class="fas fa-question-circle"></i> Help Center</button>
+                    <a href="{% url "login" %}">
+                        <button class="login-btn"><i class="fas fa-sign-in-alt"></i> Login</button>
+                      </a>
+                      
+                    <button class="book-btn"><i class="fas fa-calendar-check"></i> Book Now</button>
+                </div>
+            </div>
+            <div class="search-container">
+                <div class="location-search">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <input type="text" placeholder="Enter Location" id="locationInput">
+                </div>
+                <div class="service-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search Hospitals/Blood Banks" id="serviceSearch">
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <section class="services">
+            <h2 class="section-title">Our Services</h2>
+            <div class="cards-container" id="servicesContainer"></div>
+        </section>
+
+        <!-- Appointment Section -->
+        <section class="appointment">
+            <h2 class="section-title">Book Appointment</h2>
+            <div class="filter-options">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="hospital">Hospitals</button>
+                <button class="filter-btn" data-filter="clinic">Clinics</button>
+            </div>
+            <div class="cards-container clinic-cards" id="clinicsContainer"></div>
+        </section>
+
+        <!-- Articles Section -->
+        <section class="articles">
+            <h2 class="section-title">Health Articles</h2>
+            <div class="cards-container article-cards" id="articlesContainer"></div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <h2 class="section-title">What Our Users Say</h2>
+            <div class="testimonial-container" id="testimonialsContainer"></div>
+        </section>
+
+        <!-- Footer -->
+{% include "footer.html" %}
