@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #2A9D8F;
+    --primary-color: #08e0c6;
     --secondary-color: #264653;
     --accent-color: #E9C46A;
     --light-bg: #F8F9FA;
@@ -49,8 +49,8 @@ body {
     min-width: 40px;
 }
 .logo img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 15px;
 }
 
@@ -346,3 +346,417 @@ body {
         width: 100%;
     }
 }
+.appointment-card .book-btn {
+    margin-top: 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.appointment-card .book-btn:hover {
+    background: #06c2ab;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .modal-content input {
+    width: 90%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .modal-content button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #08e0c6;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .modal-content button:hover {
+    background: #06c2ab;
+  }
+  
+  .close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  #resultArea h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #264653;
+  }
+  .records-section {
+    margin-top: 2rem;
+  }
+  
+  .upload-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .upload-form input[type="file"] {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+  }
+  
+  .upload-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .upload-btn:hover {
+    background: #06c2ab;
+  }
+  
+  .records-subtitle {
+    margin-top: 2rem;
+    color: var(--secondary-color);
+  }
+  
+  .records-list {
+    margin-top: 1rem;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .records-list li {
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+  }
+  
+  .records-list li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  
+  .records-list a {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+  }
+  @media screen and (max-width: 768px) {
+    .mission-vision {
+      flex-direction: column;
+    }
+  
+    .team-members {
+      flex-direction: column;
+      height: 200px;
+      align-items: center;
+    }
+  
+    .member {
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+  
+    .about-container {
+      padding: 1rem;
+    }
+  
+    .main {
+      margin-left: 0 !important;
+      padding: 1.5rem;
+    }
+  
+    .sidenav {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+  
+    .sidenav:hover {
+      width: 100%;
+    }
+  
+    .nav-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .nav-items a {
+      flex: 1 1 50%;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+    }
+  
+    .header h1 {
+      font-size: 1.5rem;
+    }
+  
+    .header h4 {
+      font-size: 0.9rem;
+    }
+  }
+  #appointmentModal input {
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+#appointmentModal button[type="submit"] {
+  background: var(--primary-color);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#appointmentModal button[type="submit"]:hover {
+  background: #06c2ab;
+}
+/* Chatbot Toggle */
+.chat-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--primary-color);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 9999;
+    transition: 0.3s ease;
+  }
+  
+  .chat-toggle:hover {
+    background: #06c2ab;
+  }
+  
+  /* Floating Toggle Button */
+.chat-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--primary-color);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10000;
+    transition: 0.3s ease;
+  }
+  
+  .chat-toggle:hover {
+    background: #06c2ab;
+  }
+  
+  /* Chat Container */
+  .chatbot-container {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 350px;
+    max-height: 500px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    display: none;
+    flex-direction: column;
+    z-index: 9999;
+    animation: slideUp 0.3s ease;
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Header */
+  .chat-header {
+    background: var(--secondary-color);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  /* Chat Messages */
+  .chat-body {
+    padding: 1rem;
+    height: 270px;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  /* Input */
+  .chat-input {
+    padding: 0.75rem;
+    display: flex;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(6px);
+  }
+  
+  .chat-input input {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    border-radius: 10px;
+    background: #f1f1f1;
+    font-size: 0.9rem;
+  }
+  
+  .chat-input button {
+    background: var(--primary-color);
+    border: none;
+    color: white;
+    margin-left: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .chat-input button:hover {
+    background: #06c2ab;
+  }
+  
+  /* Messages */
+  .bot-msg,
+  .user-msg {
+    max-width: 80%;
+    padding: 0.6rem 0.9rem;
+    border-radius: 16px;
+    font-size: 0.88rem;
+    line-height: 1.4;
+    word-wrap: break-word;
+  }
+  
+  .bot-msg {
+    align-self: flex-start;
+    background: rgba(8, 224, 198, 0.15);
+    color: var(--secondary-color);
+  }
+  
+  .user-msg {
+    align-self: flex-end;
+    background: var(--primary-color);
+    color: white;
+  }
+  
+  #chat-close {
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: 0.3s ease;
+  }
+  
+  #chat-close:hover {
+    transform: rotate(90deg);
+    color: var(--accent-color);
+  }
+  
+  /* Mobile Responsiveness */
+  @media screen and (max-width: 500px) {
+    .chatbot-container {
+      right: 15px;
+      width: 90%;
+    }
+  
+    .chat-toggle {
+      right: 15px;
+      bottom: 20px;
+    }
+  }
+  .chat-avatar-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  
+  .chat-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  }
+  

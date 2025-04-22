@@ -1,0 +1,43 @@
+{% include "header.html" %}
+<link rel="stylesheet" href="/static/css/blood.css">
+{% comment %} <script src='/static/js/blood.js'></script> {% endcomment %}
+<main class="main">
+  <header class="header">
+    <div class="header-logo-title">
+      <img src="logo.jpeg" alt="MediSphere Logo" class="header-logo">
+      <h1>MediSphere</h1>
+    </div>
+  </header>
+
+  <section class="blood-results-section">
+    <h2 class="section-title">
+      Available Hospitals in <span id="searchedLocation">{{ searched_city|title }}</span>
+    </h2>
+
+    {% if blood_banks %}
+      <ul>
+        {% for bank in blood_banks %}
+          <li>
+            <strong>Name:</strong> {{ bank.blood_bank_name }}<br>
+            <strong>Address:</strong> {{ bank.address }}<br>
+            <strong>Phone:</strong> {{ bank.contact_no }}<br>
+            <strong>Mobile:</strong> {{ bank.mobile }}<br>
+            <strong>City:</strong> {{ bank.city }}<br>
+            <strong>District:</strong> {{ bank.district }}<br>
+            <strong>State:</strong> {{ bank.state }}<br>
+            <strong>Service Time:</strong> {{ bank.service_time }}<br>
+            <strong>Category:</strong> {{ bank.category }}<br>
+            <strong>Nodal Officer:</strong> {{ bank.nodal_officer }}<br>
+            <strong>Component Available:</strong> {{ bank.blood_component_available }}<br>
+            <strong>Apheresis:</strong> {{ bank.apheresis }}<br>
+            <hr>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No blood banks found in {{ searched_city|title }}.</p>
+    {% endif %}
+  </section>
+</main>
+
+{% include "footer.html" %}

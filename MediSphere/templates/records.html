@@ -1,0 +1,30 @@
+{% include "header.html" %}
+<link rel="stylesheet" href="/static/css/records.css">
+<script src="static/js/records.js"></script>
+<main class="main">
+    <header class="header">
+        <div class="header-logo-title">
+          <img src="logo.jpeg" alt="MediSphere Logo" class="header-logo">
+          <h1>MediSphere</h1>
+        </div>
+      </header>
+      
+
+    <div class="records-section">
+      <h2 class="section-title">Patient Records</h2>
+
+      <!-- Summary Bar -->
+      <div class="record-summary" id="recordSummary"></div>
+
+      <!-- Upload Form -->
+      <form id="uploadForm" class="upload-form">
+        <label for="recordUpload">Upload Medical Record (PDF/JPG/PNG, max 5MB)</label>
+        <input type="file" id="recordUpload" accept=".pdf,.jpg,.png,.jpeg" required>
+        <button type="submit" class="upload-btn"><i class="fas fa-upload"></i> Upload</button>
+      </form>
+
+      <!-- Record Grid -->
+      <div class="record-grid" id="recordsGrid"></div>
+    </div>
+
+{% include "footer.html" %}

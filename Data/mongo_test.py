@@ -1,16 +1,21 @@
 from pymongo import MongoClient
+import pprint
 
 # Connect to MongoDB
 client = MongoClient("mongodb://localhost:27017/")
 db = client["medisphere"]
-collection = db["hospitals"]
 
-# Fetch all documents
-documents = collection.find()
+# Pretty print setup
+pp = pprint.PrettyPrinter(indent=2)
 
-print("\n📄 All Documents in 'hospitals' Collection:\n")
-for doc in documents:
-    print(f"City: {doc.get('city')}")
-    for i, hospital in enumerate(doc.get("hospitals", []), 1):
-        print(f"  {i}. {hospital}")
-    print("-" * 50)
+# === Fetch and print some hospital data ===
+print("\n🏥 Sample Hospitals in MongoDB:")
+hospitals = db["hospitals"].find().limit(3)
+for hospital in hospitals:
+    pp.pprint(hospital)
+
+# === Fetch and print some blood bank data ===
+print("\n🩸 Sample Blood Banks in MongoDB:")
+blood_banks = db["blood_banks"].find().limit(3)
+for blood_bank in blood_banks:
+    pp.pprint(blood_bank)

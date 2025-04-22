@@ -26,5 +26,14 @@ urlpatterns = [
     path('payment/',include('payment.urls')),
     path('about_us/',views.about_us,name="about_us"),
     path('contact/',views.contact_us,name="contact"),
+    path('records/',views.records,name="records"),
+    
+    path('api/search-bloodbanks/', views.search_blood_banks, name='search_bloodbanks'),
+    path('blood-results/', views.blood_results, name='blood_results'),
+    path('search-blood/', views.render_search_blood_banks, name='search_blood'),
+
+
+
+
    
 ]
