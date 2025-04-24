@@ -14,13 +14,13 @@
   <!-- Side Navigation -->
   <nav class="sidenav" id="sidenav">
     <div class="logo">
-      <img src="logo.jpeg" alt="MediSphere Logo" class="logo-img">
+      <img src="/static/images/logo.jpg" alt="MediSphere Logo" class="logo-img">
       <h1>MediSphere</h1>
     </div>
     <div class="nav-items">
       <a href="{% url "home" %}" class="active"><i class="fas fa-home"></i> Home</a>
       <a href="#calendar"><i class="fas fa-calendar-alt"></i> Schedule</a>
-      <a href="{% url "records" %}"><i class="fas fa-file-medical"></i> Records</a>
+      <a href="{% url "my_records" %}"><i class="fas fa-file-medical"></i> Records</a>
       <a href="#" id="bloodBtn"><i class="fas fa-tint"></i> Blood</a>
       <a href="#inventory"><i class="fas fa-boxes"></i> Inventory</a>
       <a href="{% url "contact" %}"><i class="fas fa-envelope"></i> Contact</a>

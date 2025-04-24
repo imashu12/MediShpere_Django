@@ -1,62 +1,57 @@
 {% include "header.html" %}
-{% load socialaccount %}
 {% load static %}
-<title>Sign Up</title>
+{% load socialaccount %}
 
-<body>
-    <div>
-        <h2>Create Account</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - MediSphere</title>
+  <link rel="stylesheet" href="{% static 'css/sign.css' %}">
+  <script defer src="{% static 'js/sign.js' %}"></script>
+</head>
+<body class="bg">
 
-        {% if form.errors %}
-            <div>
-                {% for field in form %}
-                    {% for error in field.errors %}
-                        <p style="color: red;">{{ error }}</p>
-                    {% endfor %}
-                {% endfor %}
-            </div>
+  <div class="form-container">
+    <div class="form-box">
+      <h2>Welcome!</h2>
+      <p>Please create your account</p>
+
+      {% if form.errors %}
+        <div class="error-box">
+          {% for field in form %}
+            {% for error in field.errors %}
+              <p class="error">{{ error }}</p>
+            {% endfor %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <form method="post" action="{% url 'signup' %}">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username" value="{{ form.username.value }}" required>
+        <input type="email" name="email" placeholder="Email" value="{{ form.email.value }}" required>
+        <input type="password" name="password1" placeholder="Password" required>
+        <input type="password" name="password2" placeholder="Confirm Password" required>
+
+        {% if form.captcha %}
+          <div class="captcha-box">{{ form.captcha }}</div>
         {% endif %}
 
-        <form method="post">
-            {% csrf_token %}
+        <button type="submit" class="submit-btn">Create Account</button>
+      </form>
 
-            <label for="username">Username:</label>
-            <input type="text" name="username" id="username" value="{{ form.username.value }}" required>
-            <br><br>
+      <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
 
-            <label for="email">Email Address:</label>
-            <input type="email" name="email" id="email" value="{{ form.email.value }}" required>
-            <br><br>
+      <div class="divider"><span>or</span></div>
 
-            <label for="password1">Password:</label>
-            <input type="password" name="password1" id="password1" required>
-            <br><br>
-
-            <label for="password2">Confirm Password:</label>
-            <input type="password" name="password2" id="password2" required>
-            <br><br>
-            
-            {{ form.captcha }}
-
-            <button type="submit">Sign Up</button>
-        </form>
-        <h4>Google login</h4>
-        <a href="{% provider_login_url 'google' %}?next=/">
-            <button style="background-color:rgb(115, 159, 221); color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
-                <img src="{% static 'google_logo.png' %}" alt="Google Logo" style="width: 20px; height: 20px; margin-right: 10px; vertical-align: middle;">
-                Login with Google
-            </button>
-        </a>
-
-        {% if success_message %}
-            <div>
-                <p style="color: green;">{{ success_message }}</p>
-            </div>
-        {% endif %}
-
-        <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+      <a href="{% provider_login_url 'google' %}?next=/" class="google-btn">
+        <img src="{% static 'images/google_logo.png' %}" alt="Google"> Sign up with Google
+      </a>
     </div>
-</body>
+  </div>
 
+</body>
 </html>
 {% include "footer.html" %}

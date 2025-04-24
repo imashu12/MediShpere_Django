@@ -1,113 +1,108 @@
-.blood-results-section {
-    margin-top: 2rem;
-  }
-  
-  .blood-card {
-    background: white;
-    border-radius: 15px;
-    padding: 1.5rem;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    border-left: 5px solid var(--primary-color);
-  }
-  
-  .blood-card h3 {
-    color: var(--secondary-color);
-    margin-bottom: 0.5rem;
-  }
-  
-  .blood-info {
-    margin-top: 0.8rem;
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-  
-  .blood-group {
-    display: inline-block;
-    background: var(--accent-color);
-    color: #fff;
-    padding: 4px 10px;
-    margin: 5px;
-    border-radius: 10px;
-    font-weight: bold;
-  }
-  /* Header */
+:root {
+  --primary-color: #2A9D8F;
+  --secondary-color: #264653;
+  --accent-color: #E76F51;
+  --light-bg: #F8F9FA;
+  --text-dark: #2B2D42;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--light-bg);
+  color: var(--text-dark);
+}
+
+.main {
+  padding: 2rem 1.5rem;
+}
+
 .header-logo-title {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
-  
-  .header-logo {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 12px;
-  }
-  
-  /* Blood Results Section */
-  .blood-results-section {
-    margin-top: 2rem;
-  }
-  
-  .blood-card {
-    background: white;
-    border-radius: 15px;
-    padding: 1.5rem;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    border-left: 5px solid var(--primary-color);
-  }
-  
-  .blood-card h3 {
-    color: var(--secondary-color);
-    margin-bottom: 0.5rem;
-  }
-  
-  .blood-info {
-    margin-top: 0.8rem;
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-  
-  .blood-group {
-    display: inline-block;
-    background: var(--accent-color);
-    color: #fff;
-    padding: 4px 10px;
-    margin: 5px;
-    border-radius: 10px;
-    font-weight: bold;
-  }
-  
-  /* Contact */
-  .contact {
-    text-align: center;
-    margin-top: 3rem;
-    padding: 2rem;
-    background: var(--secondary-color);
-    color: white;
-    border-radius: 10px;
-  }
-  
-  .contact i {
-    color: var(--accent-color);
-    margin-right: 10px;
-  }
-  
-  .contact p {
-    font-size: 1.1rem;
-    margin: 10px 0;
-  }
-  
-  /* Footer */
-  .footer {
-    text-align: center;
-    padding: 1rem;
-    background: var(--secondary-color);
-    color: white;
-    margin-top: 2rem;
-    border-radius: 10px;
-  }
-  
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.header-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: var(--secondary-color);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.highlight {
+  color: var(--accent-color);
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 2rem;
+}
+
+.blood-card {
+  background: #ffffff;
+  border-left: 6px solid var(--primary-color);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blood-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card-header h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: var(--secondary-color);
+}
+
+.badge {
+  background: var(--accent-color);
+  color: #fff;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.75rem;
+  border-radius: 20px;
+}
+
+.blood-info p {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.no-results {
+  text-align: center;
+  color: #e74c3c;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+.location-error {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #ffe0e0;
+  border: 1px solid #ffb4b4;
+  color: #d63031;
+  border-radius: 8px;
+  text-align: center;
+}

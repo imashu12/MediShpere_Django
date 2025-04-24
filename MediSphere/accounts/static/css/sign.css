@@ -1,0 +1,130 @@
+:root {
+    --primary-color: #08e0c6;
+    --secondary-color: #264653;
+    --accent-color: #E9C46A;
+    --text-color: #2B2D42;
+    --bg-color: #F8F9FA;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-color);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .signup-box {
+    max-width: 500px;
+    margin: 5rem auto;
+    background: white;
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .signup-box h2 {
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+  }
+  
+  .signup-form input {
+    width: 100%;
+    padding: 0.9rem;
+    margin: 0.7rem 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .signup-form button {
+    width: 100%;
+    padding: 0.9rem;
+    background: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+  }
+  
+  .signup-form button:hover {
+    background: #06c2ab;
+  }
+  
+  .google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    background: white;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .google-btn:hover {
+    border-color: var(--primary-color);
+  }
+  
+  .google-btn img {
+    height: 20px;
+  }
+  
+  .error-box, .success-box {
+    background: #ffe5e5;
+    padding: 1rem;
+    border: 1px solid #ff9f9f;
+    color: red;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  
+  .success-box {
+    background: #e0ffe0;
+    border-color: #82d982;
+    color: green;
+  }
+  
+  .divider {
+    margin: 2rem 0;
+    position: relative;
+  }
+  
+  .divider span {
+    background: white;
+    padding: 0 1rem;
+    color: #888;
+  }
+  
+  .divider::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #ccc;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: -1;
+  }
+  
+  .login-link {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  #matchMsg {
+    font-size: 0.9rem;
+    color: crimson;
+    text-align: left;
+    display: block;
+    margin-top: -10px;
+  }
+  

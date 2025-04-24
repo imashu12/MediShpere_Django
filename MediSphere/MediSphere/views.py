@@ -4,6 +4,8 @@ import json
 import os
 from pymongo import MongoClient
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+
 
 # ✅ MongoDB connection setup
 client = MongoClient("mongodb://localhost:27017/")
@@ -19,14 +21,12 @@ def about_us(requst):
 def contact_us(request):
     return render(request,"contact.html")
 
+@login_required
 def records(request):
     return render(request,"records.html")
 
 
-def blood_results(request):
-    return render(request, "blood-results.html")
-
-
+@login_required
 def search_blood_banks(request):
     if request.method == "GET":
         # Fetch city from the query parameters
@@ -46,6 +46,8 @@ def search_blood_banks(request):
         return JsonResponse({"blood_banks": filtered_blood_banks}, safe=False)
 
     return JsonResponse({"error": "Invalid request"}, status=400)
+
+@login_required
 def render_search_blood_banks(request):
     if request.method == "GET":
         city = request.GET.get('city', '').strip().lower()
@@ -56,3 +58,4 @@ def render_search_blood_banks(request):
             "searched_city": city
         })
     return render(request, "blood.html")
+

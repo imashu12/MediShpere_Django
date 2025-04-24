@@ -1,0 +1,101 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .records-container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #2d3436;
+    margin-bottom: 40px;
+  }
+  
+  .records-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  
+  .record-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .record-card:hover {
+    transform: scale(1.03);
+  }
+  
+  .record-card h3 {
+    margin-top: 0;
+    color: #34495e;
+  }
+  
+  .record-card p {
+    margin: 10px 0;
+    color: #555;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 8px 14px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .btn:hover {
+    background-color: #2980b9;
+  }
+  
+  .date {
+    font-size: 12px;
+    color: #888;
+    margin-top: 10px;
+  }
+  
+  .no-records {
+    text-align: center;
+    color: #888;
+    font-size: 18px;
+    margin-top: 30px;
+  }
+  .danger-btn {
+    background-color: #e74c3c;
+    margin-left: 10px;
+  }
+  
+  .danger-btn:hover {
+    background-color: #c0392b;
+  }
+  .upload-button-container {
+    text-align: right;
+    margin-bottom: 20px;
+  }
+  
+  .upload-btn {
+    background-color: #2ecc71;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .upload-btn:hover {
+    background-color: #27ae60;
+  }
+    

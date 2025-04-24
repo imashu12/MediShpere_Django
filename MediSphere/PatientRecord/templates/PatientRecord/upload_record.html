@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Upload Patient Record | MediSphere</title>
+  <link rel="stylesheet" href="{% static 'css/upload.css' %}" />
+  <script defer src="{% static 'js/upload.js' %}"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+</head>
+<body>
+
+<div class="container">
+  <h2><i class="fas fa-file-medical"></i> Upload Patient Record</h2>
+
+  {% if form.errors %}
+    <div class="error-box">
+      {% for field in form %}
+        {% for error in field.errors %}
+          <p class="error">{{ error }}</p>
+        {% endfor %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <form method="POST" enctype="multipart/form-data" class="upload-form">
+    {% csrf_token %}
+    <div class="form-group">
+      {{ form.title.label_tag }} {{ form.title }}
+    </div>
+    <div class="form-group">
+      {{ form.description.label_tag }} {{ form.description }}
+    </div>
+    <div class="form-group">
+      {{ form.document.label_tag }} {{ form.document }}
+    </div>
+    <button type="submit" class="btn">Upload</button>
+  </form>
+</div>
+
+</body>
+</html>

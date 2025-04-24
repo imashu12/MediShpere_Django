@@ -67,19 +67,24 @@ def verify_otp(request):
             try:
                 user = customuser.objects.get(id=user_id)
                 otp_entry = OTP.objects.filter(user=user).latest('created_at')
+
+                # Check if OTP expired
                 if (now() - otp_entry.created_at).seconds > 300:
                     messages.error(request, "OTP expired. Please login again.")
                     return redirect('login')
+
+                # ✅ Check OTP and login with explicit backend
                 if otp_entry.otp_code == hash_otp(otp_code):
+                    user.backend = 'django.contrib.auth.backends.ModelBackend'  # <-- This is the fix
                     login(request, user)
                     messages.success(request, f"Login successful as {user.username}")
-                    '''return redirect('home')'''  
+                    return redirect("home")  # ✅ don't forget to redirect!
                 else:
                     messages.error(request, "Invalid OTP")
             except OTP.DoesNotExist:
                 messages.error(request, "OTP not found for this user.")
     return render(request, 'accounts/verify_otp.html')
-
+        
 def logout_page(request):
     logout(request)
     return redirect('home')

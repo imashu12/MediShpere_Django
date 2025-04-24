@@ -24,16 +24,23 @@
     <div class="top-bar">
       <div class="header-row">
         <div class="logo">
-          <img src="logo.jpeg" alt="MediSphere Logo" class="logo-img">
+          <img src="/static/images/logo.jpg" alt="MediSphere Logo" class="logo-img">
           <h1>MediSphere</h1>
         </div>
         <div class="top-buttons">
-          <button class="help-btn"><i class="fas fa-question-circle"></i> About</button>
-          <a href="{% url "login" %}" target="_blank">
-            <button class="login-btn"><i class="fas fa-sign-in-alt"></i> Login</button>
-          </a>
-          <!-- <button class="book-btn"><i class="fas fa-calendar-check"></i> Book Now</button> -->
-        </div>
+          {% if user.is_authenticated %}
+              <!-- Logout button shown if user is logged in -->
+              <form method="post" action="{% url 'logout' %}">
+                  {% csrf_token %}
+                  <button type="submit" class="login-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+              </form>
+          {% else %}
+              <!-- Login button shown if user is not logged in -->
+              <a href="{% url 'login' %}">
+                  <button class="login-btn"><i class="fas fa-sign-in-alt"></i> Login</button>
+              </a>
+          {% endif %}
+      </div>      
       </div>
       <div class="search-container">
         <div class="location-search">

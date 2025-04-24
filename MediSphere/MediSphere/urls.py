@@ -17,6 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,13 +30,12 @@ urlpatterns = [
     path('about_us/',views.about_us,name="about_us"),
     path('contact/',views.contact_us,name="contact"),
     path('records/',views.records,name="records"),
-    
     path('api/search-bloodbanks/', views.search_blood_banks, name='search_bloodbanks'),
-    path('blood-results/', views.blood_results, name='blood_results'),
     path('search-blood/', views.render_search_blood_banks, name='search_blood'),
-
-
-
+    path('patient-record/', include('PatientRecord.urls')),
 
    
 ]
+
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
