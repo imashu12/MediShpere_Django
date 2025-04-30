@@ -1,26 +1,54 @@
-{% include "header.html" %}
 
-<title>Verify OTP</title>
-
-<body>
-    <h2>Verify OTP</h2>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verify OTP | MediSphere</title>
     
+    <link rel="stylesheet" href="{% static 'css/verify_otp.css' %}">
+    <script defer src="{% static 'js/otp_verification.js' %}"></script>
+</head>
+<body>
+
+<div class="otp-container">
+    <h2>Verify OTP</h2>
+
     {% if messages %}
-        <ul>
+        <ul class="messages">
             {% for message in messages %}
-                <li style="color: red;">{{ message }}</li>
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
             {% endfor %}
         </ul>
     {% endif %}
-    
-    <form method="POST">
-        {% csrf_token %}
-        
-        <label for="otp_code">Enter OTP:</label>
-        <input type="text" name="otp_code" required><br><br>
 
+    <form method="post" action="{% url 'verify_otp' %}" id="otp-form">
+        {% csrf_token %}
+        <div class="otp-inputs">
+            <input type="text" maxlength="1" required>
+            <input type="text" maxlength="1" required>
+            <input type="text" maxlength="1" required>
+            <input type="text" maxlength="1" required>
+            <input type="text" maxlength="1" required>
+            <input type="text" maxlength="1" required>
+        </div>
+        <input type="hidden" name="otp_code" id="otp_code">
         <button type="submit">Verify OTP</button>
     </form>
-</body>
 
-{% include "footer.html" %}
+</div>
+
+<script>
+// Merge 6 inputs into hidden input before submit
+document.getElementById('otp-form').addEventListener('submit', function(e) {
+    const otpInputs = document.querySelectorAll('.otp-inputs input');
+    let finalOtp = '';
+    otpInputs.forEach(input => {
+        finalOtp += input.value;
+    });
+    document.getElementById('otp_code').value = finalOtp;
+});
+</script>
+
+</body>
+</html>

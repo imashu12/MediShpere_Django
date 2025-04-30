@@ -33,6 +33,9 @@ urlpatterns = [
     path('api/search-bloodbanks/', views.search_blood_banks, name='search_bloodbanks'),
     path('search-blood/', views.render_search_blood_banks, name='search_blood'),
     path('patient-record/', include('PatientRecord.urls')),
+    path('hospitals/', views.hospitals_view, name='hospitals'),
+   
+
 
    
 ]

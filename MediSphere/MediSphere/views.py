@@ -7,6 +7,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
 
+
 # ✅ MongoDB connection setup
 client = MongoClient("mongodb://localhost:27017/")
 db = client["medisphere"]  # Replace with your DB name
@@ -59,3 +60,31 @@ def render_search_blood_banks(request):
         })
     return render(request, "blood.html")
 
+from django.shortcuts import render
+from pymongo import MongoClient
+
+@login_required
+def hospitals_view(request):
+    client = MongoClient("mongodb://localhost:27017/")
+    db = client["medisphere"]
+    hospitals_collection = db["hospitals"]
+
+    hospitals = []  # Default: empty hospitals
+
+    if request.method == "POST":
+        location_query = request.POST.get('location', '')
+        name_query = request.POST.get('hospital', '')
+
+        query = {}
+        if location_query:
+            query["location.city"] = {"$regex": location_query, "$options": "i"}
+        if name_query:
+            query["hospital_name"] = {"$regex": name_query, "$options": "i"}
+
+        hospitals = list(hospitals_collection.find(query))
+    
+    else:
+        # Show all hospitals if first time page open (optional)
+        hospitals = list(hospitals_collection.find())
+
+    return render(request, "hospitals.html", {"hospitals": hospitals})

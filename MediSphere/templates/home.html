@@ -1,124 +1,130 @@
-{% include "header.html" %}
+  {% include "header.html" %}
 
 
-<!-- Blood Modal -->
-<div id="bloodModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Find Blood Banks</h2>
-    <button id="autoDetectBtn">Auto Detect Location</button>
-    <p>or</p>
-
-    <form method="get" action="{% url 'search_blood' %}">
-      <input type="text" name="city" id="manualLocation" placeholder="Enter your location manually" required>
-      <button type="submit" id="submitManualLocation">Search</button>
-    </form>
-    <!-- ✅ Django Form END -->
-
-  </div>
-</div>
-
-
-  <main class="main" id="main">
-    <!-- Top Bar -->
-    <div class="top-bar">
-      <div class="header-row">
-        <div class="logo">
-          <img src="/static/images/logo.jpg" alt="MediSphere Logo" class="logo-img">
-          <h1>MediSphere</h1>
-        </div>
-        <div class="top-buttons">
-          {% if user.is_authenticated %}
-              <!-- Logout button shown if user is logged in -->
-              <form method="post" action="{% url 'logout' %}">
-                  {% csrf_token %}
-                  <button type="submit" class="login-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
-              </form>
-          {% else %}
-              <!-- Login button shown if user is not logged in -->
-              <a href="{% url 'login' %}">
-                  <button class="login-btn"><i class="fas fa-sign-in-alt"></i> Login</button>
-              </a>
-          {% endif %}
-      </div>      
-      </div>
-      <div class="search-container">
-        <div class="location-search">
-          <i class="fas fa-map-marker-alt"></i>
-          <input type="text" placeholder="Enter Location" id="locationInput">
-        </div>
-        <div class="service-search">
-          <i class="fas fa-search"></i>
-          <input type="text" placeholder="Search Hospitals/Blood Banks" id="serviceSearch">
-        </div>
-      </div>
-    </div>
-
-    <!-- Services -->
-    <section class="services">
-      <h2 class="section-title">Our Services</h2>
-      <div class="cards-container" id="servicesContainer"></div>
-    </section>
-
-    <!-- Appointments -->
-    <section class="appointment">
-      <h2 class="section-title">Book Appointment</h2>
-      <div class="filter-options">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="hospital">Hospitals</button>
-        <button class="filter-btn" data-filter="clinic">Clinics</button>
-      </div>
-      <div class="cards-container clinic-cards" id="clinicsContainer"></div>
-    </section>
-
-    <!-- Articles -->
-    <section class="articles">
-      <h2 class="section-title">Health Articles</h2>
-      <div class="cards-container article-cards" id="articlesContainer"></div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-      <h2 class="section-title">What Our Users Say</h2>
-      <div class="testimonial-container" id="testimonialsContainer"></div>
-    </section>
-
-
-    <!-- Appointment Modal -->
-<div id="appointmentModal" class="modal">
+  <!-- Blood Modal -->
+  <div id="bloodModal" class="modal">
     <div class="modal-content">
-      <span class="close close-appointment">&times;</span>
-      <h2>Book Your Appointment</h2>
-      <form id="appointmentForm">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Email" required />
-        <input type="datetime-local" required />
-        <button type="submit">Confirm Booking</button>
+      <span class="close">&times;</span>
+      <h2>Find Blood Banks</h2>
+      <button id="autoDetectBtn">Auto Detect Location</button>
+      <p>or</p>
+
+      <form method="get" action="{% url 'search_blood' %}">
+        <input type="text" name="city" id="manualLocation" placeholder="Enter your location manually" required>
+        <button type="submit" id="submitManualLocation">Search</button>
       </form>
+      <!-- ✅ Django Form END -->
+
     </div>
   </div>
-  <!-- Chatbot -->
-  <div class="chatbot-container" id="chatbot">
-    <div class="chat-header">
-      <div class="chat-avatar-title">
-        <img src="doctor.png" alt="Doctor Avatar" class="chat-avatar">
-        <h4>Dr. MediBot</h4>
+
+
+    <main class="main" id="main">
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <div class="header-row">
+          <div class="logo">
+            <img src="/static/images/logo.jpg" alt="MediSphere Logo" class="logo-img">
+            <h1>MediSphere</h1>
+          </div>
+          <div class="top-buttons">
+            {% if user.is_authenticated %}
+                <!-- Logout button shown if user is logged in -->
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="login-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                </form>
+            {% else %}
+                <!-- Login button shown if user is not logged in -->
+                <a href="{% url 'login' %}">
+                    <button class="login-btn"><i class="fas fa-sign-in-alt"></i> Login</button>
+                </a>
+            {% endif %}
+        </div>      
+        </div>
+        <div class="search-container">
+          <form method="post" action="{% url 'hospitals' %}" class="search-form">
+            {% csrf_token %}
+            <div class="search-inputs">   <!-- ✅ New wrapper -->
+              <div class="location-search">
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" placeholder="Enter Location" name="location" id="locationInput">
+              </div>
+              <div class="service-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search Hospitals/Blood Banks" name="hospital" id="serviceSearch">
+              </div>
+            </div>
+            <button type="submit" style="display: none;"></button>
+          </form>
+        </div>
+        
+      </div> 
+      <!-- Services -->
+      <section class="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="cards-container" id="servicesContainer"></div>
+      </section>
+
+      <!-- Appointments -->
+      <section class="appointment">
+        <h2 class="section-title">Book Appointment</h2>
+        <div class="filter-options">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="hospital">Hospitals</button>
+          <button class="filter-btn" data-filter="clinic">Clinics</button>
+        </div>
+        <div class="cards-container clinic-cards" id="clinicsContainer"></div>
+      </section>
+
+      <!-- Articles -->
+      <section class="articles">
+        <h2 class="section-title">Health Articles</h2>
+        <div class="cards-container article-cards" id="articlesContainer"></div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="testimonials">
+        <h2 class="section-title">What Our Users Say</h2>
+        <div class="testimonial-container" id="testimonialsContainer"></div>
+      </section>
+
+
+      <!-- Appointment Modal -->
+  <div id="appointmentModal" class="modal">
+      <div class="modal-content">
+        <span class="close close-appointment">&times;</span>
+        <h2>Book Your Appointment</h2>
+        <form id="appointmentForm">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Email" required />
+          <input type="datetime-local" required />
+          <button type="submit">Confirm Booking</button>
+        </form>
       </div>
-      <span id="chat-close">×</span>
+    </div>
+    <!-- Chatbot -->
+    <div class="chatbot-container" id="chatbot">
+      <div class="chat-header">
+        <div class="chat-avatar-title">
+          <img src="doctor.png" alt="Doctor Avatar" class="chat-avatar">
+          <h4>Dr. MediBot</h4>
+        </div>
+        <span id="chat-close">×</span>
+      </div>
+      
+      <div class="chat-body" id="chat-body">
+        <div class="bot-msg">Hi! How can I assist you today?</div>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="chatInput" placeholder="Type your message..." />
+        <button id="sendBtn"><i class="fas fa-paper-plane"></i></button>
+      </div>
     </div>
     
-    <div class="chat-body" id="chat-body">
-      <div class="bot-msg">Hi! How can I assist you today?</div>
+    <!-- Chat Toggle Button -->
+    <div id="chatToggle" class="chat-toggle">
+      <i class="fas fa-comment-dots"></i>
     </div>
-    <div class="chat-input">
-      <input type="text" id="chatInput" placeholder="Type your message..." />
-      <button id="sendBtn"><i class="fas fa-paper-plane"></i></button>
-    </div>
-  </div>
-  
-  <!-- Chat Toggle Button -->
-  <div id="chatToggle" class="chat-toggle">
-    <i class="fas fa-comment-dots"></i>
-  </div>
-        <!-- Footer -->
-{% include "footer.html" %}
+          <!-- Footer -->
+  {% include "footer.html" %}

@@ -1,0 +1,102 @@
+{% include "header.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hospitals | MediSphere</title>
+  <link rel="stylesheet" href="{% static 'css/hospitals.css' %}">
+  <script defer src="{% static 'js/hospitals.js' %}"></script>
+</head>
+<body>
+
+<section class="search-area">
+  <form id="searchForm" method="post">
+    {% csrf_token %}
+    <input type="text" name="location" placeholder="Enter Location" />
+    <input type="text" name="hospital" placeholder="Search Hospitals" />
+    <button type="submit">Search</button>
+  </form>
+</section>
+
+<section class="hospitals-container">
+  {% for hospital in hospitals %}
+    <div class="hospital-card">
+      <h2>{{ hospital.hospital_name }}</h2>
+      <p><strong>Location:</strong> {{ hospital.location.city }}, {{ hospital.location.state }}</p>
+      <p><strong>Phone:</strong> {{ hospital.phone_number }}</p>
+
+      <p><strong>Bed Prices:</strong></p>
+      <ul>
+        <li>General: ₹{{ hospital.bed_prices.general }}</li>
+        <li>Triple: ₹{{ hospital.bed_prices.triple }}</li>
+        <li>Double: ₹{{ hospital.bed_prices.double }}</li>
+        <li>Single: ₹{{ hospital.bed_prices.single }}</li>
+      </ul>
+
+      <p><strong>ICU Available:</strong> {{ hospital.icu_available|yesno:"Yes,No" }}</p>
+      <p><strong>Oxygen Supply Available:</strong> {{ hospital.oxygen_supply_available|yesno:"Yes,No" }}</p>
+      <p><strong>Doctor Consultation Fee:</strong> ₹{{ hospital.doctor_consultation_fee }}</p>
+
+      <!-- 🔥 Book Appointment Button -->
+      <form class="razorpay-form"
+            data-hospital="{{ hospital.hospital_name }}"
+            data-amount="{{ hospital.doctor_consultation_fee }}">
+        <button type="submit" class="book-btn">Book Appointment Now</button>
+      </form>
+
+    </div>
+  {% empty %}
+    <p>No hospitals found matching your search.</p>
+  {% endfor %}
+</section>
+
+<!-- Razorpay Payment Script -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+  document.querySelectorAll('.razorpay-form').forEach(form => {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const hospitalName = form.getAttribute('data-hospital');
+      const amount = form.getAttribute('data-amount');
+
+      const res = await fetch('/payment/create_payment/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `amount=${amount}&hospital_name=${encodeURIComponent(hospitalName)}`
+      });
+
+      const data = await res.json();
+
+      if (data.order_id) {
+        const options = {
+          key: data.KEY,
+          amount: data.amount,
+          currency: "INR",
+          name: "MediSphere",
+          description: `Consultation at ${data.hospital_name}`,
+          order_id: data.order_id,
+          handler: function (response) {
+            alert("✅ Payment Successful\nPayment ID: " + response.razorpay_payment_id);
+          },
+          theme: {
+            color: "#08e0c6"
+          }
+        };
+
+        const rzp = new Razorpay(options);
+        rzp.open();
+      } else {
+        alert("❌ Failed to create Razorpay order");
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
+{% include "footer.html" %}

@@ -759,4 +759,12 @@ body {
     object-fit: cover;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
   }
-  
+
+  .search-inputs {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+  margin-top: 10px;
+  flex-wrap: wrap; /* Mobile ke liye responsive */
+}

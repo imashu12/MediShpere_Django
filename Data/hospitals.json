@@ -1,143 +1,852 @@
 [
-    {
-      "city": "Lucknow",
-      "hospitals": [
-        {
-          "name": "Sanjay Gandhi Postgraduate Institute of Medical Sciences (SGPGI)",
-          "address": "Rae Bareli Road, Lucknow",
-          "contact": "0522 266 8700",
-          "website": "https://sgpgims.org.in/"
-        },
-        {
-          "name": "King George's Medical University (KGMU)",
-          "address": "Shah Mina Road, Chowk, Lucknow",
-          "contact": "0522 225 8880",
-          "website": "http://www.kgmu.org/"
-        },
-        {
-          "name": "Dr. Ram Manohar Lohia Institute of Medical Sciences (RMLIMS)",
-          "address": "Vibhuti Khand, Gomti Nagar, Lucknow",
-          "contact": "0522 669 2000",
-          "website": "http://drrmlims.ac.in/"
-        },
-        {
-          "name": "Medanta Hospital",
-          "address": "Sector B, Pocket-1, Sushant Golf City, Amar Shaheed Path, Lucknow",
-          "contact": "0522 450 5050",
-          "website": "https://www.medanta.org/hospitals-lucknow/"
-        },
-        {
-          "name": "ApolloMedics Super Speciality Hospital",
-          "address": "Kanpur Road, Bargawan, LDA Colony, Lucknow",
-          "contact": "0522 678 8888",
-          "website": "https://apollomedics.com/"
-        }
-      ]
-    },
-    {
-      "city": "Shimla",
-      "hospitals": [
-        {
-          "name": "Indira Gandhi Medical College and Hospital (IGMC)",
-          "address": "Ridge Sanjauli Road, Shimla",
-          "contact": "0177 265 8831",
-          "website": "https://www.igmcshimla.edu.in/"
-        },
-        {
-          "name": "Deen Dayal Upadhyay Hospital",
-          "address": "Shimla, Himachal Pradesh",
-          "contact": "0177 280 6333",
-          "website": "http://www.hphealth.nic.in/"
-        },
-        {
-          "name": "Fortis Hospital Shimla",
-          "address": "Shimla Bypass, Tutikandi, Shimla",
-          "contact": "0177 645 5555",
-          "website": "https://www.fortishealthcare.com/"
-        },
-        {
-          "name": "Kamla Nehru Hospital",
-          "address": "Near IGMC, Shimla",
-          "contact": "0177 265 5291",
-          "website": "https://www.himachal.nic.in/"
-        },
-        {
-          "name": "Civil Hospital Rohru",
-          "address": "Rohru, Shimla District",
-          "contact": "0178 124 5146",
-          "website": "http://www.hphealth.nic.in/"
-        }
-      ]
-    },
-    {
-      "city": "Delhi",
-      "hospitals": [
-        {
-          "name": "AIIMS Delhi",
-          "address": "Ansari Nagar, New Delhi",
-          "contact": "011 2658 8500",
-          "website": "https://www.aiims.edu/"
-        },
-        {
-          "name": "Fortis Escorts Heart Institute",
-          "address": "Okhla Road, New Delhi",
-          "contact": "011 4713 5000",
-          "website": "https://www.fortisescorts.in/"
-        },
-        {
-          "name": "Sir Ganga Ram Hospital",
-          "address": "Rajinder Nagar, New Delhi",
-          "contact": "011 2575 0000",
-          "website": "https://www.sgrh.com/"
-        },
-        {
-          "name": "BLK-Max Super Speciality Hospital",
-          "address": "Pusa Road, New Delhi",
-          "contact": "011 3040 3040",
-          "website": "https://www.blkhospital.com/"
-        },
-        {
-          "name": "Apollo Hospital Delhi",
-          "address": "Mathura Road, Sarita Vihar, Delhi",
-          "contact": "011 7179 1090",
-          "website": "https://delhi.apollohospitals.com/"
-        }
-      ]
-    },
-    {
-      "city": "Mumbai",
-      "hospitals": [
-        {
-          "name": "Kokilaben Dhirubhai Ambani Hospital",
-          "address": "Andheri West, Mumbai",
-          "contact": "022 4269 6969",
-          "website": "https://www.kokilabenhospital.com/"
-        },
-        {
-          "name": "Lilavati Hospital",
-          "address": "Bandra Reclamation, Mumbai",
-          "contact": "022 2675 1000",
-          "website": "https://www.lilavatihospital.com/"
-        },
-        {
-          "name": "Hinduja Hospital",
-          "address": "Veer Savarkar Marg, Mahim, Mumbai",
-          "contact": "022 2445 1515",
-          "website": "https://www.hindujahospital.com/"
-        },
-        {
-          "name": "Bombay Hospital",
-          "address": "Marine Lines, Mumbai",
-          "contact": "022 2206 7676",
-          "website": "https://www.bombayhospital.com/"
-        },
-        {
-          "name": "Nanavati Max Super Speciality Hospital",
-          "address": "Vile Parle West, Mumbai",
-          "contact": "022 2626 7500",
-          "website": "https://www.nanavatihospital.org/"
-        }
-      ]
-    }
-  ]
-  
+  {
+      "hospital_name": "King George's Medical University Branch 1",
+      "location": {
+          "city": "Gurgaon",
+          "state": "Haryana"
+      },
+      "phone_number": "9793366632",
+      "bed_prices": {
+          "general": 2703,
+          "triple": 3706,
+          "double": 4799,
+          "single": 7620
+      },
+      "icu_available": true,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 638
+  },
+  {
+      "hospital_name": "Sanjay Gandhi PGIMS Branch 2",
+      "location": {
+          "city": "Meerut",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "8913329930",
+      "bed_prices": {
+          "general": 2917,
+          "triple": 3021,
+          "double": 5023,
+          "single": 5150
+      },
+      "icu_available": false,
+      "oxygen_supply_available": true,
+      "doctor_consultation_fee": 591
+  },
+  {
+      "hospital_name": "Sharda Hospital Branch 3",
+      "location": {
+          "city": "Meerut",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "9391415545",
+      "bed_prices": {
+          "general": 2999,
+          "triple": 3737,
+          "double": 5482,
+          "single": 7476
+      },
+      "icu_available": false,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 827
+  },
+  {
+      "hospital_name": "Medanta Hospital Branch 4",
+      "location": {
+          "city": "Delhi",
+          "state": "Delhi"
+      },
+      "phone_number": "8167033784",
+      "bed_prices": {
+          "general": 1924,
+          "triple": 3473,
+          "double": 3694,
+          "single": 6205
+      },
+      "icu_available": true,
+      "oxygen_supply_available": true,
+      "doctor_consultation_fee": 1764
+  },
+  {
+      "hospital_name": "Fortis Hospital Branch 5",
+      "location": {
+          "city": "Noida",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "9881773778",
+      "bed_prices": {
+          "general": 1626,
+          "triple": 3211,
+          "double": 3521,
+          "single": 7731
+      },
+      "icu_available": false,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 767
+  },
+  {
+      "hospital_name": "Apollo Hospital Branch 6",
+      "location": {
+          "city": "Greater Noida",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "7166541296",
+      "bed_prices": {
+          "general": 1961,
+          "triple": 3155,
+          "double": 5194,
+          "single": 6952
+      },
+      "icu_available": true,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 1949
+  },
+  {
+      "hospital_name": "Sharda Hospital Branch 7",
+      "location": {
+          "city": "Delhi",
+          "state": "Delhi"
+      },
+      "phone_number": "7610295746",
+      "bed_prices": {
+          "general": 1708,
+          "triple": 2846,
+          "double": 4829,
+          "single": 5329
+      },
+      "icu_available": false,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 1425
+  },
+  {
+      "hospital_name": "Fortis Hospital Branch 8",
+      "location": {
+          "city": "Meerut",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "9352295269",
+      "bed_prices": {
+          "general": 2587,
+          "triple": 2949,
+          "double": 4618,
+          "single": 5542
+      },
+      "icu_available": false,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 1423
+  },
+  {
+      "hospital_name": "Sharda Hospital Branch 9",
+      "location": {
+          "city": "Kanpur",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "7016896135",
+      "bed_prices": {
+          "general": 1699,
+          "triple": 2720,
+          "double": 4881,
+          "single": 7370
+      },
+      "icu_available": false,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 994
+  },
+  {
+      "hospital_name": "Apollo Hospital Branch 10",
+      "location": {
+          "city": "New Delhi",
+          "state": "Delhi"
+      },
+      "phone_number": "8022089586",
+      "bed_prices": {
+          "general": 2942,
+          "triple": 2588,
+          "double": 3638,
+          "single": 7505
+      },
+      "icu_available": false,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 1753
+  },
+  {
+      "hospital_name": "Fortis Hospital Branch 11",
+      "location": {
+          "city": "Gurgaon",
+          "state": "Haryana"
+      },
+      "phone_number": "9588494536",
+      "bed_prices": {
+          "general": 2595,
+          "triple": 3438,
+          "double": 4434,
+          "single": 7660
+      },
+      "icu_available": true,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 627
+  },
+  {
+      "hospital_name": "Paras Hospital Branch 12",
+      "location": {
+          "city": "Kanpur",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "7967317416",
+      "bed_prices": {
+          "general": 2639,
+          "triple": 3402,
+          "double": 3831,
+          "single": 7232
+      },
+      "icu_available": false,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 1816
+  },
+  {
+      "hospital_name": "Fortis Hospital Branch 13",
+      "location": {
+          "city": "Ghaziabad",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "9150913844",
+      "bed_prices": {
+          "general": 1997,
+          "triple": 3880,
+          "double": 4436,
+          "single": 5828
+      },
+      "icu_available": true,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 551
+  },
+  {
+      "hospital_name": "Safdarjung Hospital Branch 14",
+      "location": {
+          "city": "Faridabad",
+          "state": "Haryana"
+      },
+      "phone_number": "9150516421",
+      "bed_prices": {
+          "general": 2113,
+          "triple": 2592,
+          "double": 4035,
+          "single": 6891
+      },
+      "icu_available": false,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 1470
+  },
+  {
+      "hospital_name": "Sharda Hospital Branch 15",
+      "location": {
+          "city": "Greater Noida",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "9345437309",
+      "bed_prices": {
+          "general": 2358,
+          "triple": 2897,
+          "double": 4685,
+          "single": 5741
+      },
+      "icu_available": true,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 1037
+  },
+  {
+      "hospital_name": "Fortis Hospital Branch 16",
+      "location": {
+          "city": "Faridabad",
+          "state": "Haryana"
+      },
+      "phone_number": "9558510900",
+      "bed_prices": {
+          "general": 1633,
+          "triple": 2557,
+          "double": 3861,
+          "single": 7998
+      },
+      "icu_available": false,
+      "oxygen_supply_available": true,
+      "doctor_consultation_fee": 1710
+  },
+  {
+      "hospital_name": "King George's Medical University Branch 17",
+      "location": {
+          "city": "Kanpur",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "8763263484",
+      "bed_prices": {
+          "general": 1762,
+          "triple": 2530,
+          "double": 4715,
+          "single": 6590
+      },
+      "icu_available": true,
+      "oxygen_supply_available": true,
+      "doctor_consultation_fee": 1744
+  },
+  {
+      "hospital_name": "Fortis Hospital Branch 18",
+      "location": {
+          "city": "Gurgaon",
+          "state": "Haryana"
+      },
+      "phone_number": "8069673374",
+      "bed_prices": {
+          "general": 1552,
+          "triple": 3512,
+          "double": 4610,
+          "single": 5922
+      },
+      "icu_available": false,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 817
+  },
+  {
+      "hospital_name": "Paras Hospital Branch 19",
+      "location": {
+          "city": "Gurgaon",
+          "state": "Haryana"
+      },
+      "phone_number": "7109925978",
+      "bed_prices": {
+          "general": 1778,
+          "triple": 3176,
+          "double": 3871,
+          "single": 7666
+      },
+      "icu_available": true,
+      "oxygen_supply_available": true,
+      "doctor_consultation_fee": 1089
+  },
+  {
+      "hospital_name": "Medanta Hospital Branch 20",
+      "location": {
+          "city": "Noida",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "9122853811",
+      "bed_prices": {
+          "general": 2531,
+          "triple": 3010,
+          "double": 5123,
+          "single": 5875
+      },
+      "icu_available": true,
+      "oxygen_supply_available": true,
+      "doctor_consultation_fee": 1930
+  },
+  {
+      "hospital_name": "Medanta Hospital Branch 21",
+      "location": {
+          "city": "Faridabad",
+          "state": "Haryana"
+      },
+      "phone_number": "9440604886",
+      "bed_prices": {
+          "general": 1852,
+          "triple": 3742,
+          "double": 3605,
+          "single": 6014
+      },
+      "icu_available": true,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 1119
+  },
+  {
+      "hospital_name": "Max Super Speciality Hospital Branch 22",
+      "location": {
+          "city": "Gurgaon",
+          "state": "Haryana"
+      },
+      "phone_number": "9716888103",
+      "bed_prices": {
+          "general": 2969,
+          "triple": 3164,
+          "double": 4601,
+          "single": 7647
+      },
+      "icu_available": false,
+      "oxygen_supply_available": true,
+      "doctor_consultation_fee": 1419
+  },
+  {
+      "hospital_name": "Safdarjung Hospital Branch 23",
+      "location": {
+          "city": "Greater Noida",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "9338275113",
+      "bed_prices": {
+          "general": 1643,
+          "triple": 2731,
+          "double": 4293,
+          "single": 6130
+      },
+      "icu_available": false,
+      "oxygen_supply_available": true,
+      "doctor_consultation_fee": 1562
+  },
+  {
+      "hospital_name": "Sanjay Gandhi PGIMS Branch 24",
+      "location": {
+          "city": "Greater Noida",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "7522872145",
+      "bed_prices": {
+          "general": 1524,
+          "triple": 2857,
+          "double": 5349,
+          "single": 5617
+      },
+      "icu_available": false,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 1870
+  },
+  {
+      "hospital_name": "Paras Hospital Branch 25",
+      "location": {
+          "city": "Delhi",
+          "state": "Delhi"
+      },
+      "phone_number": "8222910875",
+      "bed_prices": {
+          "general": 2639,
+          "triple": 3946,
+          "double": 3603,
+          "single": 7243
+      },
+      "icu_available": false,
+      "oxygen_supply_available": true,
+      "doctor_consultation_fee": 617
+  },
+  {
+      "hospital_name": "AIIMS Delhi Branch 26",
+      "location": {
+          "city": "Gurgaon",
+          "state": "Haryana"
+      },
+      "phone_number": "9939882169",
+      "bed_prices": {
+          "general": 2151,
+          "triple": 2557,
+          "double": 3982,
+          "single": 7371
+      },
+      "icu_available": false,
+      "oxygen_supply_available": true,
+      "doctor_consultation_fee": 565
+  },
+  {
+      "hospital_name": "Sanjay Gandhi PGIMS Branch 27",
+      "location": {
+          "city": "Delhi",
+          "state": "Delhi"
+      },
+      "phone_number": "7019820825",
+      "bed_prices": {
+          "general": 2414,
+          "triple": 3575,
+          "double": 4678,
+          "single": 7524
+      },
+      "icu_available": true,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 663
+  },
+  {
+      "hospital_name": "AIIMS Delhi Branch 28",
+      "location": {
+          "city": "Delhi",
+          "state": "Delhi"
+      },
+      "phone_number": "8625970799",
+      "bed_prices": {
+          "general": 1787,
+          "triple": 2678,
+          "double": 5336,
+          "single": 5312
+      },
+      "icu_available": true,
+      "oxygen_supply_available": true,
+      "doctor_consultation_fee": 1450
+  },
+  {
+      "hospital_name": "Max Super Speciality Hospital Branch 29",
+      "location": {
+          "city": "Greater Noida",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "7514401390",
+      "bed_prices": {
+          "general": 2113,
+          "triple": 2962,
+          "double": 5150,
+          "single": 7788
+      },
+      "icu_available": true,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 666
+  },
+  {
+      "hospital_name": "Apollo Hospital Branch 30",
+      "location": {
+          "city": "Faridabad",
+          "state": "Haryana"
+      },
+      "phone_number": "8310000970",
+      "bed_prices": {
+          "general": 1920,
+          "triple": 3353,
+          "double": 3751,
+          "single": 5960
+      },
+      "icu_available": true,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 1975
+  },
+  {
+      "hospital_name": "Safdarjung Hospital Branch 31",
+      "location": {
+          "city": "Greater Noida",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "8765493642",
+      "bed_prices": {
+          "general": 2781,
+          "triple": 3999,
+          "double": 4409,
+          "single": 7099
+      },
+      "icu_available": true,
+      "oxygen_supply_available": true,
+      "doctor_consultation_fee": 1525
+  },
+  {
+      "hospital_name": "Sanjay Gandhi PGIMS Branch 32",
+      "location": {
+          "city": "Faridabad",
+          "state": "Haryana"
+      },
+      "phone_number": "8175643404",
+      "bed_prices": {
+          "general": 2825,
+          "triple": 2953,
+          "double": 3895,
+          "single": 5974
+      },
+      "icu_available": false,
+      "oxygen_supply_available": true,
+      "doctor_consultation_fee": 1557
+  },
+  {
+      "hospital_name": "Apollo Hospital Branch 33",
+      "location": {
+          "city": "New Delhi",
+          "state": "Delhi"
+      },
+      "phone_number": "9792305199",
+      "bed_prices": {
+          "general": 2025,
+          "triple": 3473,
+          "double": 5227,
+          "single": 7966
+      },
+      "icu_available": false,
+      "oxygen_supply_available": true,
+      "doctor_consultation_fee": 1203
+  },
+  {
+      "hospital_name": "Safdarjung Hospital Branch 34",
+      "location": {
+          "city": "Faridabad",
+          "state": "Haryana"
+      },
+      "phone_number": "8509441570",
+      "bed_prices": {
+          "general": 2215,
+          "triple": 3911,
+          "double": 4020,
+          "single": 6463
+      },
+      "icu_available": false,
+      "oxygen_supply_available": true,
+      "doctor_consultation_fee": 1518
+  },
+  {
+      "hospital_name": "Sanjay Gandhi PGIMS Branch 35",
+      "location": {
+          "city": "Noida",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "7103582143",
+      "bed_prices": {
+          "general": 2669,
+          "triple": 3002,
+          "double": 3594,
+          "single": 5467
+      },
+      "icu_available": true,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 978
+  },
+  {
+      "hospital_name": "King George's Medical University Branch 36",
+      "location": {
+          "city": "New Delhi",
+          "state": "Delhi"
+      },
+      "phone_number": "7301873191",
+      "bed_prices": {
+          "general": 2886,
+          "triple": 3708,
+          "double": 4077,
+          "single": 5627
+      },
+      "icu_available": true,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 895
+  },
+  {
+      "hospital_name": "AIIMS Delhi Branch 37",
+      "location": {
+          "city": "Kanpur",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "9544788112",
+      "bed_prices": {
+          "general": 2058,
+          "triple": 2577,
+          "double": 4730,
+          "single": 5590
+      },
+      "icu_available": true,
+      "oxygen_supply_available": true,
+      "doctor_consultation_fee": 1348
+  },
+  {
+      "hospital_name": "Safdarjung Hospital Branch 38",
+      "location": {
+          "city": "Meerut",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "8696595446",
+      "bed_prices": {
+          "general": 2934,
+          "triple": 2628,
+          "double": 5006,
+          "single": 5641
+      },
+      "icu_available": false,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 1783
+  },
+  {
+      "hospital_name": "Max Super Speciality Hospital Branch 39",
+      "location": {
+          "city": "Meerut",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "7967992293",
+      "bed_prices": {
+          "general": 1687,
+          "triple": 3727,
+          "double": 3908,
+          "single": 6999
+      },
+      "icu_available": false,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 1735
+  },
+  {
+      "hospital_name": "Paras Hospital Branch 40",
+      "location": {
+          "city": "Ghaziabad",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "9476882896",
+      "bed_prices": {
+          "general": 1576,
+          "triple": 2803,
+          "double": 4534,
+          "single": 6013
+      },
+      "icu_available": true,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 1479
+  },
+  {
+      "hospital_name": "Sanjay Gandhi PGIMS Branch 41",
+      "location": {
+          "city": "Greater Noida",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "7394685447",
+      "bed_prices": {
+          "general": 2313,
+          "triple": 3708,
+          "double": 3659,
+          "single": 7273
+      },
+      "icu_available": true,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 908
+  },
+  {
+      "hospital_name": "AIIMS Delhi Branch 42",
+      "location": {
+          "city": "Faridabad",
+          "state": "Haryana"
+      },
+      "phone_number": "9249398038",
+      "bed_prices": {
+          "general": 1647,
+          "triple": 3865,
+          "double": 3673,
+          "single": 6060
+      },
+      "icu_available": true,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 1969
+  },
+  {
+      "hospital_name": "Medanta Hospital Branch 43",
+      "location": {
+          "city": "Greater Noida",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "8899990239",
+      "bed_prices": {
+          "general": 2653,
+          "triple": 3589,
+          "double": 4520,
+          "single": 6577
+      },
+      "icu_available": false,
+      "oxygen_supply_available": true,
+      "doctor_consultation_fee": 1255
+  },
+  {
+      "hospital_name": "Fortis Hospital Branch 44",
+      "location": {
+          "city": "Lucknow",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "9798300454",
+      "bed_prices": {
+          "general": 2679,
+          "triple": 2572,
+          "double": 3766,
+          "single": 6768
+      },
+      "icu_available": false,
+      "oxygen_supply_available": true,
+      "doctor_consultation_fee": 1651
+  },
+  {
+      "hospital_name": "Safdarjung Hospital Branch 45",
+      "location": {
+          "city": "Kanpur",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "7077754239",
+      "bed_prices": {
+          "general": 2530,
+          "triple": 3465,
+          "double": 4513,
+          "single": 7483
+      },
+      "icu_available": false,
+      "oxygen_supply_available": true,
+      "doctor_consultation_fee": 1850
+  },
+  {
+      "hospital_name": "Safdarjung Hospital Branch 46",
+      "location": {
+          "city": "Ghaziabad",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "7257603150",
+      "bed_prices": {
+          "general": 2562,
+          "triple": 2618,
+          "double": 5153,
+          "single": 6028
+      },
+      "icu_available": true,
+      "oxygen_supply_available": true,
+      "doctor_consultation_fee": 885
+  },
+  {
+      "hospital_name": "Apollo Hospital Branch 47",
+      "location": {
+          "city": "Greater Noida",
+          "state": "Uttar Pradesh"
+      },
+      "phone_number": "9670192045",
+      "bed_prices": {
+          "general": 2548,
+          "triple": 3017,
+          "double": 4113,
+          "single": 7652
+      },
+      "icu_available": true,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 1553
+  },
+  {
+      "hospital_name": "Fortis Hospital Branch 48",
+      "location": {
+          "city": "Delhi",
+          "state": "Delhi"
+      },
+      "phone_number": "8594948763",
+      "bed_prices": {
+          "general": 2241,
+          "triple": 2669,
+          "double": 4787,
+          "single": 6866
+      },
+      "icu_available": true,
+      "oxygen_supply_available": true,
+      "doctor_consultation_fee": 1712
+  },
+  {
+      "hospital_name": "King George's Medical University Branch 49",
+      "location": {
+          "city": "New Delhi",
+          "state": "Delhi"
+      },
+      "phone_number": "9422119635",
+      "bed_prices": {
+          "general": 2179,
+          "triple": 3286,
+          "double": 4802,
+          "single": 5294
+      },
+      "icu_available": false,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 1151
+  },
+  {
+      "hospital_name": "Paras Hospital Branch 50",
+      "location": {
+          "city": "Faridabad",
+          "state": "Haryana"
+      },
+      "phone_number": "9599004307",
+      "bed_prices": {
+          "general": 2468,
+          "triple": 2852,
+          "double": 4710,
+          "single": 6703
+      },
+      "icu_available": true,
+      "oxygen_supply_available": false,
+      "doctor_consultation_fee": 952
+  }
+]

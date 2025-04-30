@@ -266,4 +266,17 @@ document.addEventListener('DOMContentLoaded', () => {
       return "I'm here to help! Try asking about appointments, blood search, or hospitals.";
     }
   });
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.search-container');
+    const inputs = form.querySelectorAll('input');
+
+    inputs.forEach(input => {
+        input.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                form.submit();
+            }
+        });
+    });
+});
+
   
